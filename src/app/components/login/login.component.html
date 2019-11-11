@@ -1,0 +1,27 @@
+<div class="layout">
+  <div class="w-full max-w-xs">
+    <form #frmLogin="ngForm" (ngSubmit)="handleSubmit(frmLogin)"
+    class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <h1 class="text-lg mb-3">Login</h1>
+      <div class="mb-4">
+        <input [(ngModel)]="d_username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" name="username" placeholder="Your Username..." ngModel required>
+      </div>
+      <div class="mb-6">
+        <input [(ngModel)]="d_password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" name="password" placeholder="Your Password..."  ngModel required>
+      </div>
+      <div class="mb-6" *ngIf="errors">
+        <ul *ngFor="let error of errors">
+          <li class="text-red-500">{{ error }}</li>
+        </ul>
+      </div>
+      <div class="flex items-center justify-between">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+          Sign In
+        </button>
+        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/recover_password">
+          Forgot Password?
+        </a>
+      </div>
+    </form>
+  </div>
+</div>

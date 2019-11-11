@@ -1,0 +1,45 @@
+<div class="flex flex-wrap mb-4 mt-16" *ngIf="vehicle">
+	<div class="lg:w-1/2 p-8 text-center sm:w-full">
+		<img src="http://tuvehiculo.clbs9571.now.sh/public/{{vehicle.src[0]}}" alt="" class="w-full h-54 m-auto">
+		<ul class="p-2" *ngIf="vehicle.src">
+			<li class="list-none inline-block m-1"
+			*ngFor="let image of vehicle.src">
+				<img src="http://tuvehiculo.clbs9571.now.sh/public/{{image}}" alt="" class="object-cover w-32 h-24"
+				(onclick)="setIm(this.src)">
+			</li>
+		</ul>	
+	</div>
+
+	<div class="lg:w-1/2 p-8 text-center sm:w-full">
+		<p class="text-sm p-4">{{vehicle.year}} - {{vehicle.odometer}} km</p>
+		<h3 class="text-xl font-bold p-4">{{vehicle.make}} {{vehicle.model}}</h3>
+		<p class="p-4">Publisher information</p>
+		<div class="flex items-center">
+		  <img class="w-10 h-10 rounded-full mr-4" src="{{vehicle.avatar}}" alt="">
+		  <div class="text-sm">
+		    <p class="text-gray-900 leading-none">
+		    	{{vehicle.fname}} {{vehicle.lname}}
+			</p>
+		    <p class="text-gray-600">{{vehicle.email}}</p>
+		 	</div>
+		</div>
+		<h4 class="m-auto p-4">Technical information</h4>
+		<div class="flex flex-wrap justify-center bg-gray-200 p-2">
+		  <div class="flex-initial text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
+		    {{vehicle.make}}
+		  </div>
+		  <div class="flex-initial text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
+		    {{vehicle.model}}
+		  </div>
+		  <div class="flex-initial text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
+		    {{vehicle.year}}
+		  </div>
+		  <div class="flex-initial text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
+		    {{vehicle.odometer}} km
+		  </div>
+		  <div class="flex-initial text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
+		    {{  vehicle.price }}
+		  </div>
+		</div>	
+	</div>
+</div>

@@ -1,0 +1,30 @@
+<nav class="navbar p-3">
+  <a href="/" class="float-left mr-auto text-lg text-gray-400 font-black">tuvehiculo</a>
+  <ul class="flex justify-end"  *ngIf="loggedIn === false">
+      <li class="mr-6">
+        <a class="text-gray-200 hover:text-gray-400" routerLink="/upload">
+          New Post
+        </a>
+      </li>
+      <li class="mr-6">
+        <a class="text-gray-200 hover:text-gray-400" routerLink="/signin">
+          Signin
+        </a>
+      </li>
+      <li class="mr-6">
+        <a class="text-gray-400 font-bold" routerLink="/signup">Signup</a>
+      </li>
+  </ul>
+  <ul class="flex justify-end" *ngIf="loggedIn !== false">
+    <li class="mr-6">
+      <a class="text-gray-200 hover:text-gray-400" routerLink="/upload">
+        New Post
+      </a>
+    </li>
+    <li class="mr-6">
+      <a class="text-sm text-gray-300 hover:text-gray-400" routerLink="/logout">
+        logout
+      </a>
+    </li>
+  </ul>  
+</nav>

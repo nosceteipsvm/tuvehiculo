@@ -1,0 +1,181 @@
+<div class="showcase lg:min-h-0 md:min-h-0 sm:min-h-screen">
+	<form #search="ngForm" (ngSubmit)="queryVehicles(search)">
+		<div class="lg:flex md:flex mb-2 rounded-lg p-4 h-full search-content">
+		    <div class="w-full md:w-1/5 px-3 mb-4">
+		      <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-state"
+		      name="class" ngModel>
+		        CLASS
+		      </label>
+		      <div class="relative">
+		        <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+			      <option>All</option>
+			      <option>Small</option>
+			      <option>Medium</option>
+			      <option>Large</option>
+			      <option>Luxury</option>
+			      <option>SUV</option>
+			      <option>Trucks</option>
+			      <option>Other</option>
+		        </select>
+		        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+		          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="w-full md:w-1/4 px-3 mb-4">
+		      <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-state">
+		        Manufacturer
+		      </label>
+		      <div class="relative">
+		        <select [(ngModel)]="init_man" *ngIf="manufacturer" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+		        id="grid-state" #_manufacturer name="make"
+		        (change)="handleManuChange(_manufacturer)" ngModel>
+		          <option [ngValue]="null" disabled>Select a make</option>
+		          <option *ngFor="let make of manufacturer">
+		        	{{ make }}
+		      	  </option>
+		        </select>
+		        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+		          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="w-full md:w-1/4 px-3 mb-4">
+		      <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-state">
+		        Models
+		      </label>
+		      <div class="relative">
+
+		        <select [(ngModel)]="init_mon" *ngIf="models" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+		        id="grid-state" #_model name="model" ngModel>
+		          <option [ngValue]="null" disabled>Select a model</option>
+		          <option *ngFor="let model of models">
+		          	{{ model }}
+		          </option>
+		        </select>
+				
+				<!--
+		        <select *ngIf="!models" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500
+		        cursor-not-allowed" id="grid-state" #_model disabled>
+		          <option>Select a make</option>
+		        </select>
+		    	-->
+		        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+		          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="w-full md:w-1/6 px-3 mb-4">
+		      <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-state">
+		        MIN YEAR
+		      </label>
+		      <div class="relative">
+		        <select [(ngModel)]="min_year" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
+		        name="min_year" ngModel>
+		          <option>1980</option>
+		          <option>1990</option>
+		          <option>2000</option>
+		          <option>2005</option>
+		          <option>2010</option>
+		          <option>2015</option>
+		          <option>2019</option>
+		        </select>
+		        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+		          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="w-full md:w-1/6 px-3 mb-4">
+		      <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-state">
+		        MAX YEAR
+		      </label>
+		      <div class="relative">
+		        <select [(ngModel)]="max_year" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
+		        name="max_year" ngModel>
+		          <option>1980</option>
+		          <option>1990</option>
+		          <option>2019</option>
+		          <option>2015</option>
+		          <option>2010</option>
+		          <option>2005</option>
+		          <option>2000</option>
+		        </select>
+		        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+		          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="w-full md:w-1/6 px-3 mb-4">
+		      <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-state">
+		        MIN PRICE
+		      </label>
+		      <div class="relative">
+		        <select [(ngModel)]="min_price" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
+		        name="min_price" ngModel>
+		          <option [ngValue]="10000">10K</option>
+		          <option [ngValue]="20000">20K</option>
+		          <option [ngValue]="50000">50K</option>
+		          <option [ngValue]="100000">100K</option>
+		          <option [ngValue]="1000000">1M</option>
+		        </select>
+		        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+		          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="w-full md:w-1/6 px-3 mb-4">
+		      <label class="block uppercase tracking-wide text-gray-200 text-xs font-bold mb-2" for="grid-state">
+		        MAX PRICE
+		      </label>
+		      <div class="relative">
+		        <select [(ngModel)]="max_price" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
+		        name="max_price" ngModel>
+		          <option [ngValue]="10000">10K</option>
+		          <option [ngValue]="20000">20K</option>
+		          <option [ngValue]="50000">50K</option>
+		          <option [ngValue]="100000">100K</option>
+		          <option [ngValue]="1000000">1M</option>
+		        </select>
+		        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+		          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		<div class="flex self-center items-center justify-center pt-6 w-full m-auto">
+			<button class="bg-black text-gray-200 hover:text-gray-400 p-3 text-lg rounded-sm font-bold uppercase">
+			search
+			</button>
+		</div>
+	</form>
+</div>
+
+<div class="wrapper">
+	<div class="lg:flex lg:flex-wrap p-5 h-full sm:min-w-full">	
+		<div class="lg:w-1/3 sm:w-full relative h-full" id="w1">
+			<a href="/posts/search" class="lg:w-full sm:w-full p-3">
+				<div class="lg:w-1/3 sm:w-full p-3 absolute" id="veil">
+					<h1 class="lg:text-xl sm:text-6xl text-gray-300 font-bold">LUXURY
+					</h1>
+				</div>
+			</a>
+		</div>
+		<div class="lg:w-1/3 sm:w-full p-3 relative h-full" id="w2">
+			<a href="/posts/search" class="lg:w-full sm:w-full p-3">
+				<div class="lg:w-full sm:w-full p-3 absolute" id="veil">
+					<h1 class="lg:text-xl sm:text-6xl text-gray-300 font-bold">NEW CARS
+					</h1>
+				</div>
+			</a>
+		</div>
+		<div class="lg:w-1/3 sm:w-full p-3 relative h-full" id="w3">
+			<a href="/posts/search" class="lg:w-full sm:w-full p-3">
+				<div class="lg:w-full sm:w-full p-3 absolute" id="veil">
+					<h1 class="lg:text-xl sm:text-6xl text-gray-300 font-bold">
+					SUVs
+					</h1>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>

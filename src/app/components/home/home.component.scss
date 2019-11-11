@@ -1,0 +1,51 @@
+.showcase {
+	margin-top: 50px;
+	padding: 3em;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+	flex-direction: column;
+	background: url('../../../assets/5e19abdb56_1024.jpg');
+	background-size: cover;
+	background-position: center;
+	position: relative;
+}
+
+.search-content {
+	background: rgba(0, 0, 0, .5);
+}
+
+#w1 { 
+	background: url('http://tuvehiculo.clbs9571.now.sh/public/476_243324551.jpg');
+	background-size: cover;
+	background-position: center;
+}
+#w2 {
+	background: url('http://tuvehiculo.clbs9571.now.sh/public/2018-mercedes-amg-s63-coupe-2.jpg');
+	background-size: cover;
+	background-position: center;
+}
+#w3 {
+	background: url('http://tuvehiculo.clbs9571.now.sh/public/rrswbphev006.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.wrapper {
+	padding-top: 2em;
+	height: 510px;
+}
+
+#veil {
+	background: rgba(0, 0, 0, .2);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-self: center;
+	text-align: center;
+}
