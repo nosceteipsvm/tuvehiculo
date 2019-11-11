@@ -1,8 +1,10 @@
+const path = require('path');
+
 module.exports = {
   // Tailwind Paths
-  configJS: 'C:\\Users\\nokogiri\\tuvehiculo\\tuvehiculo_frontend\\tailwind.config.js',
-  sourceCSS: 'C:\\Users\\nokogiri\\tuvehiculo\\tuvehiculo_frontend\\src\\tailwind.css',
-  outputCSS: 'C:\\Users\\nokogiri\\tuvehiculo\\tuvehiculo_frontend\\src\\styles.scss',
+  configJS: path.resolve(__dirname, 'tailwind.config.js'),
+  sourceCSS: path.join(__dirname, 'src', 'tailwind.css'),
+  outputCSS: path.join(__dirname, 'src', 'styles.scss'),
   // Sass
   sass: true,
   // PurgeCSS Settings
