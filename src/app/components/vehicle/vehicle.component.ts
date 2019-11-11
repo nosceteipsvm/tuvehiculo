@@ -28,8 +28,4 @@ export class VehicleComponent implements OnInit {
 		});
 	}
 
-	setIm(src: string){
-		//document.querySelector('.current_image').src = src;
-	}
-
 }
