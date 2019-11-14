@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class VehicleComponent implements OnInit {
 	vehicle: any;
 	vehicle_id: string;
+	current_img: string;
 
 	constructor(
 		private fetch: FetchService,
@@ -21,6 +22,7 @@ export class VehicleComponent implements OnInit {
 	async ngOnInit() {
 		await this.fetch.searchById(this.vehicle_id).subscribe( async results => {
 			this.vehicle = await results[0];
+			this.current_img = this.vehicle.src[0];
 			this.vehicle.price = new Intl.NumberFormat('de-DE', {
 	    		style: 'currency',
 	    		currency: 'USD'
@@ -28,4 +30,7 @@ export class VehicleComponent implements OnInit {
 		});
 	}
 
+	setCurrImg(image: string){
+		this.current_img = image;
+	}
 }

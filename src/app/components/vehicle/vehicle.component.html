@@ -1,10 +1,11 @@
 <div class="flex flex-wrap mb-4 mt-16" *ngIf="vehicle">
 	<div class="lg:w-1/2 p-8 text-center sm:w-full">
-		<img src="http://tuvehiculo.clbs9571.now.sh/public/{{vehicle.src[0]}}" alt="" class="w-full h-54 m-auto">
+		<img src="http://tuvehiculo.clbs9571.now.sh/public/{{current_img}}" alt="" class="w-full h-54 m-auto">
 		<ul class="p-2" *ngIf="vehicle.src">
 			<li class="list-none inline-block m-1"
 			*ngFor="let image of vehicle.src">
-				<img src="http://tuvehiculo.clbs9571.now.sh/public/{{image}}" alt="" class="object-cover w-32 h-24">
+				<img src="http://tuvehiculo.clbs9571.now.sh/public/{{image}}" alt="" class="object-cover w-32 h-24"
+				(click)="setCurrImg(image)">
 			</li>
 		</ul>	
 	</div>
