@@ -10,6 +10,11 @@ import { FetchService } from '../../services/fetch.service';
 })
 export class UploadComponent implements OnInit {
 	auth: string = localStorage.getItem('SECRET_KEY');
+	default_image: string = "../../../assets/placeholder.png";
+	ph1: string = this.default_image; 
+	ph2: string = this.default_image;
+	ph3: string = this.default_image;
+	ph4: string = this.default_image;
 	init_man: string;
 	init_mon: string;
 	manufacturer: object;
@@ -45,8 +50,32 @@ export class UploadComponent implements OnInit {
 		});
 	}
 
-	handleFileInput(files: FileList) {
+	handleFileInput(files: FileList, n: number) {
       this.file = files.item(0);
+
+      //show image preview
+      var reader = new FileReader();
+      reader.onload = (event: any) => {
+      	switch(n) {
+		  case 1:
+		    this.ph1 = event.target.result;
+		    break;
+		  case 2:
+		    this.ph2 = event.target.result;
+		    break;
+		  case 3:
+		    this.ph3 = event.target.result;
+		    break;
+		  case 4:
+		    this.ph4 = event.target.result;
+		    break;
+		  default:
+		    // this.ph1 = event.target.result;
+		}
+      }
+
+      reader.readAsDataURL(this.file);
+
       this.uploadForm.append('file', this.file, this.file.name);
     }
 
