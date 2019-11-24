@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router} from '@angular/router';
 import { FetchService } from '../../services/fetch.service';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',

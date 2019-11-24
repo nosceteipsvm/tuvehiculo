@@ -14,6 +14,7 @@ import { UploadComponent } from './components/upload/upload.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { VehicleComponent } from './components/vehicle/vehicle.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     UploadComponent,
     PostsComponent,
     VehicleComponent,
-    LogoutComponent
+    LogoutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
