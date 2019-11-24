@@ -10,11 +10,11 @@ import { FetchService } from '../../services/fetch.service';
 })
 export class UploadComponent implements OnInit {
 	auth: string = localStorage.getItem('SECRET_KEY');
-	default_image: string = "../../../assets/placeholder.png";
-	ph1: string = this.default_image; 
-	ph2: string = this.default_image;
-	ph3: string = this.default_image;
-	ph4: string = this.default_image;
+	assets: string = "../../../assets/";
+	ph1: string = this.assets + "front.png";
+	ph2: string = this.assets + "side.png";
+	ph3: string = this.assets + "back.png";
+	ph4: string = this.assets + "top.png";
 	init_man: string;
 	init_mon: string;
 	manufacturer: object;
