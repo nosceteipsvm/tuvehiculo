@@ -1,8 +1,8 @@
-<div class="layout">
-  <div class="w-full max-w-xs">
+<div class="layout mt-12 md:mt-0">
+  <div class="w-full max-w-xs md:max-w-s">
     <form #frmLogin="ngForm" (ngSubmit)="handleSubmit(frmLogin)"
     class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <h1 class="text-lg mb-3">Login</h1>
+      <h1 class="text-3xl text-gray-800 font-semibold mb-6">Sign in</h1>
       <div class="mb-4">
         <input [(ngModel)]="d_username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" name="username" placeholder="Your Username..." ngModel required>
       </div>
@@ -15,11 +15,17 @@
         </ul>
       </div>
       <div class="flex items-center justify-between">
-        <button class="bg-indigo-900 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        <button class="hover:text-gray-300 text-white font-bold py-2 px-4 rounded focus:outline-none" type="submit"
+        style="background: linear-gradient(to right, #c94b4b, #4b134f)">
           Sign In
         </button>
-        <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="/recover_password">
+      </div>
+      <div class="block p-4">
+        <a class="block align-baseline font-bold text-sm text-blue-600 hover:text-blue-800" href="/recover_password">
           Forgot Password?
+        </a>
+        <a class="block align-baseline font-bold text-sm text-blue-600 hover:text-blue-800" href="/signup">
+          Don't have an account? Sign up
         </a>
       </div>
     </form>

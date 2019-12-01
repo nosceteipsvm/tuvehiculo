@@ -1,28 +1,25 @@
 <nav class="navbar p-3">
-  <a href="/" class="float-left mr-auto text-lg text-gray-400 font-black">tuvehiculo</a>
-  <ul class="flex justify-end"  *ngIf="loggedIn === false">
-      <li class="mr-6">
+  <a href="/" class="float-none md:float-left md:mr-auto mb-4 md:mb-0 text-lg text-gray-400 font-bold block">tuvehiculo</a>
+  <ul class="flex-1 md:flex md:justify-end"  *ngIf="loggedIn === false">
+      <li class="mr-6 inline-block mb-4 md:mb-0 text-center">
         <a class="text-gray-200 hover:text-gray-400" routerLink="/upload">
-          Publish
+          Log in or sign up
         </a>
       </li>
-      <li class="mr-6">
-        <a class="text-gray-200 hover:text-gray-400" routerLink="/signin">
-          Signin
+      <li class="mr-6 inline-block mb-4 md:mb-0 text-center">
+        <a class="text-gray-800 hover:text-gray-600 bg-gray-400 rounded-lg font-bold px-2 py-2" routerLink="/signin">
+          Sell my car
         </a>
-      </li>
-      <li class="mr-6">
-        <a class="text-gray-400 font-bold" routerLink="/signup">Signup</a>
       </li>
   </ul>
   <ul class="flex justify-end" *ngIf="loggedIn !== false">
-    <li class="mr-6">
-      <a class="text-gray-200 hover:text-gray-400" routerLink="/upload">
-        Publish
+    <li class="mr-6 block md:inline-block">
+      <a class="text-gray-200 font-semibold hover:text-gray-400" routerLink="/upload">
+        Sell my car
       </a>
     </li>
-    <li class="mr-6">
-      <a class="text-sm text-gray-300 hover:text-gray-400" routerLink="/logout">
+    <li class="mr-6 block md:inline-block">
+      <a class="text-base text-gray-300 hover:text-gray-400" routerLink="/logout">
         logout
       </a>
     </li>

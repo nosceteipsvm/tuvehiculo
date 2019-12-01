@@ -11,10 +11,11 @@ import { FetchService } from '../../services/fetch.service';
 export class UploadComponent implements OnInit {
 	auth: string = localStorage.getItem('SECRET_KEY');
 	assets: string = "../../../assets/";
-	ph1: string = this.assets + "front.png";
-	ph2: string = this.assets + "side.png";
-	ph3: string = this.assets + "back.png";
-	ph4: string = this.assets + "top.png";
+	image: string = 'placeholder.png';
+	ph1: string = this.assets + this.image;
+	ph2: string = this.assets + this.image;
+	ph3: string = this.assets + this.image;
+	ph4: string = this.assets + this.image;
 	init_man: string;
 	init_mon: string;
 	manufacturer: object;
