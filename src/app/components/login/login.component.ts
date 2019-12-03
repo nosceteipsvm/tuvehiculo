@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { SigninI } from '../../interfaces/auth';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-login',

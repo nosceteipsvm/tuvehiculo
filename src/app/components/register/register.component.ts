@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-register',

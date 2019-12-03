@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchService } from '../../services/fetch.service';
 import { ActivatedRoute } from '@angular/router';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-vehicle',
